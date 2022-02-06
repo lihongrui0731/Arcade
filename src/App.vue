@@ -1,10 +1,20 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="nav-bar">
+    <TabMenu :model="items" />
+    <router-view />
   </div>
-  <router-view/>
 </template>
+
+<script setup>
+import TabMenu from 'primevue/tabmenu';
+import { ref } from "vue";
+
+const items = ref([
+  { label: "Page1", to: "/" },
+  { label: "Page2", to: "/page2" },
+  { label: "Page3", to: "/page3" },
+]);
+</script>
 
 <style>
 #app {
