@@ -1,5 +1,5 @@
 <template>
-  <div id="map-container" class="map-container"></div>
+  <div id="map-component" class="map-component"></div>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
         plugins: ["AMap.ToolBar", "AMap.Scale"],
       })
         .then((AMap) => {
-          this.map = new AMap.Map("map-container", {
+          this.map = new AMap.Map("map-component", {
             viewMode: "2D",
             zoom: 5,
             resizeEnable: true,
@@ -50,8 +50,8 @@ export default {
           var polyline = new AMap.Polyline({
             path: this.path,
             strokeColor: "#3366FF",
-            strokeOpacity: 1,
-            strokeWeight: 5,
+            strokeOpacity: 0.5,
+            strokeWeight: 2,
           });
           this.map.add(polyline);
         })
@@ -68,8 +68,9 @@ export default {
 </script>
 
 <style scoped>
-.map-container {
+.map-component {
   height: 400px;
-  width: 100%;
+  width: 90%;
+  margin: 5px;
 }
 </style>

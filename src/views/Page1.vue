@@ -1,7 +1,9 @@
 <template>
     <div>
-        <h1>Page1</h1>
+        <!-- <h1>Page1</h1> -->
+        <div class="map-container flex justify-content-center">
         <Map></Map>
+        </div>
     </div>
 </template>
 
@@ -19,5 +21,9 @@ setup() {
 </script>
 
 <style>
-
+.map-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 </style>
