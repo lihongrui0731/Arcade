@@ -16,33 +16,43 @@ import { ref } from 'vue';
 export default {
     props: ['ang'],
     setup() {
-        // const ang = ref(0);
+        // const ang = ref(30);
         const rad = ref ( );
         const x2 = ref("190");
         const y2 = ref("190");
         return {
-            rad, x2, y2
+            rad, x2, y2,
+            // ang
         }
     },
     mounted() {
-        // this.draw();
+        this.draw();
     },
     methods: {
         draw(){
-            // if(this.ang !==0){
+            if(this.ang === 0){
+                this.x2 = "190";
+                this.y2 = "190";
+            }
+            else {
             this.rad = this.ang*Math.PI/180;
             const dx = 90*Math.cos(this.rad);
             const dy = 90*Math.sin(this.rad);
             this.x2 = dx + 90;
             this.y2 = 190 - dy;
             console.log(this.x2, this.y2, this.ang);
-            // }
+            }
+        }
+    },
+    watch: {
+        ang(){
+            this.draw();
         }
     },
     computed: {
         line : function(){
             return `x2="${this.x2}" y2="${this.y2}"`;
-        }
+        },
     }
 }
 </script>

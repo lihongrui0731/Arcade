@@ -41,6 +41,7 @@ methods:{
 
 <style>
 .input-row {
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   justify-content: center;
