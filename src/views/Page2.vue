@@ -6,7 +6,7 @@
     ></SvgComponent>
     <div class="input-row">
     <InputText type='text' v-model="text" />
-    <Button class="p-button-sm" @click="submit">submit</Button>
+    <Button class="p-button-sm draw-button" @click="submit">绘&nbsp;&nbsp; 制</Button>
     </div>
   </div>
 </template>
