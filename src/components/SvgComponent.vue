@@ -11,10 +11,12 @@
         style="fill: none; stroke: #515151; stroke-width: 3"
       />
       <line
+        v-for="p in points"
+        :key="p.x"
         x1="121"
         y1="120"
-        :x2="x2"
-        :y2="y2"
+        :x2="p.x"
+        :y2="p.y"
         style="stroke: #f01818; stroke-width: 5"
       />
     </svg>
@@ -22,19 +24,12 @@
 </template>
 
 <script>
-import { ref } from "vue";
+// import { ref } from "vue";
 export default {
-  props: ["ang"],
-  setup() {
-    // const ang = ref(30);
-    const rad = ref();
-    const x2 = ref("215");
-    const y2 = ref("120");
+  props: ["angs"],
+  data() {
     return {
-      rad,
-      x2,
-      y2,
-      // ang
+      points: [],
     };
   },
   mounted() {
@@ -42,27 +37,29 @@ export default {
   },
   methods: {
     draw() {
-      if (this.ang === 0) {
-        this.x2 = "215";
-        this.y2 = "120";
+      if (this.angs.length === 0) {
+        this.points = []; //initial svg
       } else {
-        this.rad = (this.ang * Math.PI) / 180;
-        const dx = 90 * Math.cos(this.rad);
-        const dy = 90 * Math.sin(this.rad);
-        this.x2 = 122 + dx; //x1+dx
-        this.y2 = 120 - dy; //y1-dy
-        console.log(this.x2, this.y2, this.ang);
+      for (let i = 0; i < this.angs.length; i++) { //process angs
+        const rad = (this.angs[i] * Math.PI) / 180; //convert to radian
+        const dx = 90 * Math.cos(rad); //calculate x
+        const dy = 90 * Math.sin(rad); //calculate y
+        const x = 122 + dx; //x1+dx
+        const y = 120 - dy; //y1-dy
+        this.points.push({ x, y });
+      }
       }
     },
   },
   watch: {
-    ang() {
-      this.draw();
-    },
-  },
-  computed: {
-    line: function () {
-      return `x2="${this.x2}" y2="${this.y2}"`;
+    angs: {
+      handler() {
+        this.angs.length === 0
+          ? console.log("angs in svg is empty")
+          : console.log("angs in svg: " + this.angs),
+          this.draw();
+      },
+      deep: true,
     },
   },
 };

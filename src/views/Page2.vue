@@ -2,12 +2,13 @@
   <div>
     <!-- <h1>Page2</h1> -->
     <SvgComponent
-      :ang="ang"
+      :angs="angs"
     ></SvgComponent>
     <div class="input-row">
     <InputText type='text' v-model="text" />
-    <Button class="p-button-sm draw-button" @click="submit">绘&nbsp;&nbsp; 制</Button>
-    </div>
+    <Button class="p-button-sm draw-button" @click="submit()">绘&nbsp;&nbsp; 制</Button>
+    <Button class="p-button-sm clear-button" @click="clearAngs()">清&nbsp;&nbsp; 空</Button>
+    </div>{{angs.toString()}}
   </div>
 </template>
 
@@ -15,26 +16,31 @@
 import SvgComponent from "../components/SvgComponent.vue"
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
-import { ref } from 'vue';
+// import { ref } from 'vue';
 export default {
 components: {
   "SvgComponent": SvgComponent,
   "InputText": InputText,
   "Button": Button
 },
-setup() {
-  const text = ref("0");
-  const ang = ref(0);
+data() {
   return {
-    text, ang
+    angs: [],
+    text: '',
   };
 },
 methods:{
   // this.ang = this.text*Math.PI/180;
   submit(){
-    this.ang = this.text;
-    console.log(this.ang);
-  }
+    this.angs.push(this.text);
+    this.text = '';
+    console.log("angs: "+this.angs);
+  },
+  clearAngs(){
+    this.angs = [];
+    this.text = '';
+    console.log("angs: "+this.angs);
+  },
 }
 }
 </script>
