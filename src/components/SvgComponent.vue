@@ -26,10 +26,11 @@
 <script>
 // import { ref } from "vue";
 export default {
-  props: ["angs"],
+  // props: ["angs"],
   data() {
     return {
       points: [],
+      angs: this.$store.state.angs,
     };
   },
   mounted() {
