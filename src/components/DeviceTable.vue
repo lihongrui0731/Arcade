@@ -10,12 +10,12 @@
     <Column field="id" header="编号" />
     <Column field="name" header="设备名" />
     <Column header="查看结果">
-      <template #body>
+      <template #body="slotProps">
         <Button
           type="button"
           icon="pi pi-cloud-download"
           class="p-button-sm preview-button"
-          @row-click="onRowClick(id)"
+          @click="onRowClick(slotProps.data)"
         ></Button>
       </template>
     </Column>
@@ -36,20 +36,25 @@ data() {
   return {
      deviceList: this.$store.state.deviceList,
      selectedDevice : [],
-     angs : this.$store.state.angs,
+    //  angs : this.$store.state.angs,
+    angs : [],
   };
 },
    
 
   methods: {
-    onRowClick(id) {
-      for (const device of this.deviceList) {
-        if (device.id === id) {
-          this.$store.angs.push(device.angle);
-          this.$store.commit("setAngs", this.angs);
-          console.log("angs: "+this.angs);
-        }
-      }
+    onRowClick(device) {
+      // for (const device of this.deviceList) {
+      //   if (device.id === id) {
+      //     this.$store.angs.push(device.angle);
+      //     this.$store.commit("setAngs", this.angs);
+      //     console.log("angs in table: "+this.angs);
+      //   }
+      // }
+      this.angs=[];
+      console.log("click row: "+device.id+" "+"angle: "+device.angle);
+      this.angs.push(device.angle);
+      this.$store.commit("setAngs", this.angs);
     },
   
   },
