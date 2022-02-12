@@ -37,26 +37,25 @@ data() {
      deviceList: this.$store.state.deviceList,
      selectedDevice : [],
     //  angs : this.$store.state.angs,
-    angs : [],
+     angs : [],
   };
 },
-   
-
   methods: {
     onRowClick(device) {
-      // for (const device of this.deviceList) {
-      //   if (device.id === id) {
-      //     this.$store.angs.push(device.angle);
-      //     this.$store.commit("setAngs", this.angs);
-      //     console.log("angs in table: "+this.angs);
-      //   }
-      // }
       this.angs=[];
-      console.log("click row: "+device.id+" "+"angle: "+device.angle);
-      this.angs.push(device.angle);
+      // this.$store.commit("clearAngs");
+      console.log("click row: "+device.id+" "
+      +"angle: "+device.angle
+      +" length of device.angle: "+device.angle.length);
+      // this.angs.push(device.angle);
+      device.angle.forEach((ang)=>{
+          this.angs.push(ang);
+        }
+      );
+      console.log("length of pushed angs: "+this.angs.length);
+      // sessionStorage.setItem("angs", device.angle);
       this.$store.commit("setAngs", this.angs);
     },
-  
   },
 };
 </script>
