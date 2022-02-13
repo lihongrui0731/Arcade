@@ -4,7 +4,7 @@
     class="DeviceTable p-datatable-sm"
     :value="deviceList"
     v-model:selection="selectedDevice"
-    :row-hover="true"
+    :row-hover="false"
   >
     <Column selectionMode="multiple" @row-click="onClickCheckbox()"></Column>
     <Column field="id" header="编号" />
@@ -67,10 +67,10 @@ data() {
 } */
 .DeviceTable {
   width: 450px;
-  height: 700px;
-  border: 3px;
+  /* height: 700px; */
+  border: 2px;
   border-style: solid;
-  border-color: #515151;
+  border-color: #921313;
   margin-top: 16px;
   margin-right: 15px;
   font-size: 15px;

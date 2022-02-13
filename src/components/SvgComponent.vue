@@ -80,8 +80,16 @@ export default {
 
 <style>
 .svg-component {
+  width: 250px;
+  height: 250px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
+  /* align-content: center; */
+  align-items: center;
+}
+.svg-component svg {
+  background-color: #8fbdf1;
+  border: 2px solid #515151;
 }
 </style>

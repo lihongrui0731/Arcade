@@ -5,7 +5,7 @@
       :angs="angs"
     ></SvgComponent> -->
     <div class="input-row">
-    <InputText type='text' v-model="text" />
+    <InputText class="input-box" type='text' v-model="text" />
     <Button class="p-button-sm add-button" @click="addAngs()">add</Button>
     <Button class="p-button-sm draw-button" @click="submit()">绘&nbsp;&nbsp; 制</Button>
     <Button class="p-button-sm clear-button" @click="clearAngs()">清&nbsp;&nbsp; 空</Button>
@@ -60,5 +60,9 @@ methods:{
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+.input-row .input-box {
+  border: 2px;
+  border-color: red;
 }
 </style>
