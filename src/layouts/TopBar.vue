@@ -13,9 +13,9 @@ export default{
  data() {
    return{
      items : [
+  { label: "实时采集", to: "/" },
   { label: "Page1", to: "/page1" },
   { label: "Page2", to: "/page2" },
-  { label: "Page3", to: "/" },
 ]
    }
  }
@@ -30,7 +30,6 @@ export default{
 }
 .top-bar .top-bar-content {
   height: 50px;
-  /* margin-bottom: 5px; */
   font-size: small;
   display: flex;
   flex-direction: row;

@@ -1,7 +1,13 @@
 <template>
   <div class="page3-container">
+    <div class="flex flex-column mt-3">
+    <SessionInput></SessionInput>
     <DeviceTable></DeviceTable>
+    </div>
+    <div class="map-buttons-and-svg">
+    <MapComponent></MapComponent>
     <div class="button-and-svg">
+     <SvgComponent></SvgComponent>
     <span class="p-buttonset ctl-buttons">
       <Button class="start-button"
       icon="mdi mdi-record mdi-36px"
@@ -11,7 +17,7 @@
       <Button class="stop-button"
       icon="mdi mdi-stop mdi-36px" @click="stop()"></Button>
     </span>
-     <SvgComponent></SvgComponent>
+     </div>
      </div>
   </div>
 </template>
@@ -20,6 +26,8 @@
 // import { ref } from 'vue';
 import DeviceTable from '../components/DeviceTable.vue';
 import SvgComponent from '../components/SvgComponent.vue';
+import MapComponent from '../components/MapComponent.vue';
+import SessionInput from '../components/SessionInput.vue';
 
 import axios from 'axios';
 import Button from 'primevue/button';
@@ -27,7 +35,7 @@ import Button from 'primevue/button';
 // const axios = require('axios');
 export default {
   components: {
-    DeviceTable, SvgComponent, Button
+    DeviceTable, SvgComponent, Button, MapComponent, SessionInput,
   },
   data(){
     return{
@@ -67,10 +75,11 @@ export default {
 .button-and-svg {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 60px;
-  margin-top: 15px;
+  align-self: flex-end;
+  gap: 8px;
+  /* width: 600px; */
 }
 /* .ctl-buttons{
   height: 50px;
@@ -78,5 +87,13 @@ export default {
 } */
 Button {
   height: 45px;
+}
+.map-buttons-and-svg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
 }
 </style>

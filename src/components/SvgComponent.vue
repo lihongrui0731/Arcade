@@ -85,11 +85,13 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* align-content: center; */
   align-items: center;
+  transform: scale(0.8);
 }
 .svg-component svg {
-  background-color: #8fbdf1;
+  /* background-color: #8fbdf1; */
+  background-color: #ccd6d7;
   border: 2px solid #515151;
+  /* transform: scale(0.8); */
 }
 </style>

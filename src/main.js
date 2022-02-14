@@ -14,6 +14,7 @@ import Button from 'primevue/button';
 import 'primevue/resources/themes/lara-dark-blue/theme.css'
 import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css';
+import '/node_modules/primeflex/primeflex.css';
 import '@mdi/font/css/materialdesignicons.css';
 
 

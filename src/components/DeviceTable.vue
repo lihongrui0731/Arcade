@@ -6,6 +6,9 @@
     v-model:selection="selectedDevice"
     :row-hover="false"
   >
+    <template #header>
+      <h5 class="mt-0 mb-0 text-sm">设备列表</h5>
+    </template>
     <Column selectionMode="multiple" @row-click="onClickCheckbox()"></Column>
     <Column field="id" header="编号" />
     <Column field="name" header="设备名" />
@@ -66,13 +69,11 @@ data() {
   justify-content: flex-end;
 } */
 .DeviceTable {
-  width: 450px;
+  width: 410px;
   /* height: 700px; */
   border: 2px;
   border-style: solid;
   border-color: #921313;
-  margin-top: 16px;
-  margin-right: 15px;
   font-size: 15px;
   font-weight: 400;
 }

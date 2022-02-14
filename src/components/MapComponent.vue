@@ -26,7 +26,7 @@ export default {
             viewMode: "2D",
             zoom: 5,
             resizeEnable: true,
-            center: [106.602725, 37.076636], //初始化地图中心点位置
+            center: [120.602725, 37.076636], //初始化地图中心点位置
             mapStyle: "amap://styles/whitesmoke",
           });
           var toolbar = new AMap.ToolBar();
@@ -70,7 +70,8 @@ export default {
 <style scoped>
 .map-component {
   height: 400px;
-  width: 90%;
+  width: 600px;
+  border: 2px solid red;
   margin: 5px;
 }
 </style>
