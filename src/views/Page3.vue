@@ -8,14 +8,16 @@
     <MapComponent></MapComponent>
     <div class="button-and-svg">
      <SvgComponent></SvgComponent>
-    <span class="p-buttonset ctl-buttons">
-      <Button class="start-button"
-      icon="mdi mdi-record mdi-36px"
+    <span class="ctl-buttons flex flex-row">
+      <Button class="start-button p-1 h-3rem w-6rem"
+      label="开始"
+      icon="mdi mdi-record mdi-24px mr-0 ml-1"
       @click="start()"
       enabled
       ></Button>
-      <Button class="stop-button"
-      icon="mdi mdi-stop mdi-36px" @click="stop()"></Button>
+      <Button class="stop-button p-1 h-3rem w-6rem"
+      label="停止"
+      icon="mdi mdi-stop mdi-24px mr-0 ml-1" @click="stop()"></Button>
     </span>
      </div>
      </div>
@@ -81,10 +83,9 @@ export default {
   gap: 8px;
   /* width: 600px; */
 }
-/* .ctl-buttons{
-  height: 50px;
-  width: 50px;
-} */
+.ctl-buttons{
+  gap: 8px;
+}
 Button {
   height: 45px;
 }

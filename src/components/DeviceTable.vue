@@ -1,7 +1,7 @@
 <template>
 <div class="datatable-component">
   <DataTable
-    class="DeviceTable p-datatable-sm"
+    class="DeviceTable p-datatable-sm text-base"
     :value="deviceList"
     v-model:selection="selectedDevice"
     :row-hover="false"

@@ -1,16 +1,16 @@
 <template>
-  <div class="session-input-component text-xl p-2">
-      <h6 class="sessionStation-label text-700 mt-1 mb-1">测试站点：&nbsp;</h6>
+  <div class="session-input-component text-base font-medium p-2">
+      <p class="sessionStation-label text-700 mt-1 mb-1">测试站点：&nbsp;</p>
       <Textarea
         class="sessionStation-input h-3rem"
         v-model="sessionStation"
       />
-      <h6 class="sessionRange-label text-700 mt-1 mb-1">测试范围：&nbsp;</h6>
+      <p class="sessionRange-label text-700 mt-1 mb-1">测试范围：&nbsp;</p>
       <Textarea
         class="sessionRange-input h-3rem"
         v-model="sessionRange"
       />
-      <h6 class="sessionNote-label text-700 mt-1 mb-1">备注：&nbsp;</h6>
+      <p class="sessionNote-label text-700 mt-1 mb-1">备注：&nbsp;</p>
       <Textarea class="sessionNote-input h-3rem" v-model="sessionNote" />
       <Button
         class="p-button-sm h-2rem col"
@@ -45,12 +45,16 @@ export default {
 </script>
 
 <style scoped>
+p {
+  font-family: Roboto;
+}
 .session-input-component {
     width: 410px;
     border: 1px solid red;
   display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px 5px;
 }
 .station-row {
   grid-column: 1 / 5;
