@@ -29,7 +29,7 @@ export default{
 
 <style scoped>
 .top-bar {
-  height: 50px;
+  height: 42.5px;
   /* border-buttom: 1px solid #ccc; */
 }
 a {

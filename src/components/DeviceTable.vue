@@ -35,6 +35,7 @@
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Button from "primevue/button";
+import axios from "axios";
 
 export default {
   components: {
@@ -47,6 +48,13 @@ data() {
     //  angs : this.$store.state.angs,
      angs : [],
   };
+},
+mounted() {
+  axios.get(`nodes`)
+    .then(res => {
+      console.log("sessionInput mounted");
+      console.log(res.data);
+    });
 },
   methods: {
     onRowClick(device) {

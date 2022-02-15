@@ -9,13 +9,13 @@
     <div class="button-and-svg">
      <SvgComponent></SvgComponent>
     <span class="ctl-buttons flex flex-row">
-      <Button class="start-button p-1 w-5rem"
+      <Button class="start-button p-1 "
       label="开始"
       icon="mdi mdi-record mdi-24px mr-0 ml-1"
       @click="start()"
       enabled
       ></Button>
-      <Button class="stop-button p-1 w-5rem"
+      <Button class="stop-button p-1"
       label="停止"
       icon="mdi mdi-stop mdi-24px mr-0 ml-1" @click="stop()"></Button>
     </span>
@@ -34,7 +34,6 @@ import SessionInput from '../components/SessionInput.vue';
 import axios from 'axios';
 import Button from 'primevue/button';
 
-// const axios = require('axios');
 export default {
   components: {
     DeviceTable, SvgComponent, Button, MapComponent, SessionInput,

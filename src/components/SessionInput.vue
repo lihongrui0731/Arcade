@@ -24,7 +24,7 @@
 import Textarea from 'primevue/textarea';
 // import InputText from "primevue/inputtext";
 import Button from "primevue/button";
-import axios from 'axios';
+// import axios from 'axios';
 export default {
   components: {
     Textarea,
@@ -38,11 +38,7 @@ export default {
     };
   },
   mounted() {
-    axios.get(`nodes`)
-    .then(res => {
-      console.log("sessionInput mounted");
-      console.log(res);
-    });
+    
   },
   methods: {
     submitSession() {
