@@ -1,6 +1,10 @@
 <template>
   <div class="top-bar">
-      <TabMenu class="top-bar-content" :model="items" />
+      <TabMenu class="top-bar-content" :model="items">
+        <template #item="{item}">
+          <a :href="item.to">{{item.label}}</a>
+        </template>
+      </TabMenu>
   </div>
 </template>
 
@@ -26,10 +30,15 @@ export default{
 <style scoped>
 .top-bar {
   height: 50px;
-  border-buttom: 1px solid #ccc;
+  /* border-buttom: 1px solid #ccc; */
+}
+a {
+  padding: 1rem;
+  font-weight: 700;
+  color: #ccc;
 }
 .top-bar .top-bar-content {
-  height: 50px;
+  /* height: 60px; */
   font-size: small;
   display: flex;
   flex-direction: row;

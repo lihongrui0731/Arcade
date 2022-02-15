@@ -1,13 +1,18 @@
 <template>
 <div class="datatable-component">
   <DataTable
-    class="DeviceTable p-datatable-sm text-base"
+    class="DeviceTable p-datatable-sm text-sm p-1"
     :value="deviceList"
     v-model:selection="selectedDevice"
     :row-hover="false"
   >
     <template #header>
+      <div class="flex flex-row justify-content-between">
       <h5 class="mt-0 mb-0 text-sm">设备列表</h5>
+      <span>
+        <p class="m-0">当前设备数: {{deviceList.length}}</p>
+      </span>
+      </div>
     </template>
     <Column selectionMode="multiple" @row-click="onClickCheckbox()"></Column>
     <Column field="id" header="编号" />
@@ -73,7 +78,9 @@ data() {
   /* height: 700px; */
   border: 2px;
   border-style: solid;
-  border-color: #921313;
+  border-color: #005e61;
+  box-shadow: inset 4px 4px 1px rgba(0, 94, 97, 0.6), 
+                inset -4px -4px 1px rgba(0, 94, 97, 0.6);
   font-size: 15px;
   font-weight: 400;
 }

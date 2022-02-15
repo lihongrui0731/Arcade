@@ -5,6 +5,12 @@ import store from './store'
 // import Vuex from 'vuex'
 import PrimeVue from 'primevue/config'
 
+import config from './config'
+import axios from 'axios'
+let base = config.vars.backendBase
+if (!base.endsWith('/')) base += '/'
+axios.defaults.baseURL = base
+
 import TabMenu from 'primevue/tabmenu';
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';

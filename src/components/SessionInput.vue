@@ -1,16 +1,16 @@
 <template>
-  <div class="session-input-component text-base font-medium p-2">
-      <p class="sessionStation-label text-700 mt-1 mb-1">测试站点：&nbsp;</p>
+  <div class="session-input-component text-sm font-medium p-2">
+      <p class="sessionStation-label text-700 mt-1 mb-1">测试站点：</p>
       <Textarea
         class="sessionStation-input h-3rem"
         v-model="sessionStation"
       />
-      <p class="sessionRange-label text-700 mt-1 mb-1">测试范围：&nbsp;</p>
+      <p class="sessionRange-label text-700 mt-1 mb-1">测试范围：</p>
       <Textarea
         class="sessionRange-input h-3rem"
         v-model="sessionRange"
       />
-      <p class="sessionNote-label text-700 mt-1 mb-1">备注：&nbsp;</p>
+      <p class="sessionNote-label text-700 mt-1 mb-1">备注：</p>
       <Textarea class="sessionNote-input h-3rem" v-model="sessionNote" />
       <Button
         class="p-button-sm h-2rem col"
@@ -24,6 +24,7 @@
 import Textarea from 'primevue/textarea';
 // import InputText from "primevue/inputtext";
 import Button from "primevue/button";
+import axios from 'axios';
 export default {
   components: {
     Textarea,
@@ -35,6 +36,13 @@ export default {
       sessionRange: "",
       sessionNote: "",
     };
+  },
+  mounted() {
+    axios.get(`nodes`)
+    .then(res => {
+      console.log("sessionInput mounted");
+      console.log(res);
+    });
   },
   methods: {
     submitSession() {
@@ -50,11 +58,14 @@ p {
 }
 .session-input-component {
     width: 410px;
-    border: 1px solid red;
+    border: 2px solid #005e61;
+    box-shadow: inset 4px 4px 1px rgba(0, 94, 97, 0.6), 
+                inset -4px -4px 1px rgba(0, 94, 97, 0.6);
   display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 5px 5px;
+    font-weight: 700;
 }
 .station-row {
   grid-column: 1 / 5;

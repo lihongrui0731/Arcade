@@ -18,7 +18,8 @@ export default {
 .background-body {
   /* height: 100%; */
   /* background-color: #efefef; */
-  background-color: #071426;
+  /* background-color: #071426; */
+  background-image: url('../assets/bg.jpg');
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -29,7 +30,7 @@ export default {
   height: 100%;
   padding-top: 15px;
   padding-bottom: 20px;
-  border-top: 1px solid #c5c8cc;
+  border-top: 1px solid #767779;
   
 }
 
