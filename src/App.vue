@@ -1,12 +1,17 @@
 <template>
+<div id="app">
     <router-view />
+    </div>
 </template>
 
-<script setup>
+<script>
 
 </script>
 
 <style scoped>
+#app {
+    height: 100%;
+}
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -16,10 +16,10 @@ export default {
 
 <style>
 .background-body {
-  /* height: 100%; */
+  height: 100%;
   /* background-color: #efefef; */
-  /* background-color: #071426; */
-  background-image: url('../assets/bg.jpg');
+  background-color: #071426;
+  /* background-image: url('../assets/bg.jpg'); */
   display: flex;
   flex-direction: column;
   justify-content: space-around;

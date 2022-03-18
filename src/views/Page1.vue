@@ -1,29 +1,27 @@
 <template>
-    <div>
-        <!-- <h1>Page1</h1> -->
-        <div class="map-container flex justify-content-center">
-        <Map></Map>
-        </div>
+    <div class="page-container">
+        <cesium class="cesium"></cesium>
     </div>
 </template>
 
 <script>
-import Map from '../components/MapComponent.vue'
+import cesium from '../components/vue-cesium.vue';
 export default {
-components: {
-    "Map": Map
-},
-setup() {
-    return {
-    }
-},
+    components: {
+        cesium
+    },
 }
 </script>
 
-<style>
-.map-container {
+<style scoped>
+/* .page-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+} */
+.cesium {
+    width: 600px;
+    height: 600px;
 }
 </style>

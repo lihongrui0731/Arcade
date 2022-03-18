@@ -1,9 +1,6 @@
 <template>
   <div class="top-bar">
       <TabMenu class="top-bar-content" :model="items">
-        <template #item="{item}">
-          <a :href="item.to">{{item.label}}</a>
-        </template>
       </TabMenu>
   </div>
 </template>
@@ -32,11 +29,11 @@ export default{
   height: 42.5px;
   /* border-buttom: 1px solid #ccc; */
 }
-a {
+/* a {
   padding: 1rem;
   font-weight: 700;
   color: #ccc;
-}
+} */
 .top-bar .top-bar-content {
   /* height: 60px; */
   font-size: small;
