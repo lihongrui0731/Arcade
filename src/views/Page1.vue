@@ -14,14 +14,15 @@ export default {
 </script>
 
 <style scoped>
-/* .page-container{
+.page-container{
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-} */
-.cesium {
+}
+/* .cesium {
     width: 600px;
     height: 600px;
-}
+} */
 </style>
