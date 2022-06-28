@@ -1,42 +1,42 @@
 <template>
   <div class="page3-container">
-    <div class="flex flex-column mt-3">
-    <SessionInput class="mb-2"></SessionInput>
-    <DeviceTable></DeviceTable>
-    </div>
-    <div class="map-buttons-and-svg">
+<!--    <div class="flex flex-column mt-3">-->
+<!--    <SessionInput class="mb-2"></SessionInput>-->
+<!--    <DeviceTable></DeviceTable>-->
+<!--    </div>-->
+<!--    <div class="map-buttons-and-svg">-->
     <MapComponent></MapComponent>
-    <div class="button-and-svg">
-     <SvgComponent></SvgComponent>
-    <span class="ctl-buttons flex flex-row">
-      <Button class="start-button p-1 "
-      label="开始"
-      icon="mdi mdi-record mdi-24px mr-0 ml-1"
-      @click="start()"
-      enabled
-      ></Button>
-      <Button class="stop-button p-1"
-      label="停止"
-      icon="mdi mdi-stop mdi-24px mr-0 ml-1" @click="stop()"></Button>
-    </span>
-     </div>
-     </div>
+<!--    <div class="button-and-svg">-->
+<!--     <SvgComponent></SvgComponent>-->
+<!--    <span class="ctl-buttons flex flex-row">-->
+<!--      <Button class="start-button p-1 "-->
+<!--      label="开始"-->
+<!--      icon="mdi mdi-record mdi-24px mr-0 ml-1"-->
+<!--      @click="start()"-->
+<!--      enabled-->
+<!--      ></Button>-->
+<!--      <Button class="stop-button p-1"-->
+<!--      label="停止"-->
+<!--      icon="mdi mdi-stop mdi-24px mr-0 ml-1" @click="stop()"></Button>-->
+<!--    </span>-->
+<!--     </div>-->
+<!--     </div>-->
   </div>
 </template>
 
 <script>
 // import { ref } from 'vue';
-import DeviceTable from '../components/DeviceTable.vue';
-import SvgComponent from '../components/SvgComponent.vue';
-import MapComponent from '../components/MapComponent.vue';
-import SessionInput from '../components/SessionInput.vue';
+// import DeviceTable from '../components/DeviceTable.vue';
+// import SvgComponent from '../components/SvgComponent.vue';
+import MapComponent from '../components/map-component.vue';
+// import SessionInput from '../components/SessionInput.vue';
 
 import axios from 'axios';
-import Button from 'primevue/button';
+// import Button from 'primevue/button';
 
 export default {
   components: {
-    DeviceTable, SvgComponent, Button, MapComponent, SessionInput,
+    /*DeviceTable, SvgComponent, Button,*/ MapComponent, /*SessionInput,*/
   },
   data(){
     return{
@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .page3-container {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
