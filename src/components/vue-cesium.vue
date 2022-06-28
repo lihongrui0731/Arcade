@@ -4,7 +4,6 @@
       <vc-viewer @ready="onReady">
         <vc-primitive-tileset
           ref="primitive"
-          url="https://zouyaoji.top/vue-cesium/SampleData/Cesium3DTiles/Tilesets/dayanta/tileset.json"
           @click="onClicked"
           @all-tiles-loaded="allTilesLoaded"
         >

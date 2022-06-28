@@ -24,7 +24,7 @@ import '/node_modules/primeflex/primeflex.css';
 import '@mdi/font/css/materialdesignicons.css';
 
 import 'vue-cesium/dist/index.css'
-import VueCesium from 'vue-cesium'
+// import VueCesium from 'vue-cesium'
 
 
 const app = createApp(App)
@@ -32,8 +32,8 @@ app.use(PrimeVue)
 app.component('TabMenu', TabMenu)
 app.component('InputText', InputText)
 app.component('Button', Button)
-app.use(VueCesium, {
-    cesiumPath: './Cesium/Cesium.js',
-})
+// app.use(VueCesium, {
+//     cesiumPath: './Cesium/Cesium.js',
+// })
 
 createApp(App).use(store).use(router).mount('#app')
